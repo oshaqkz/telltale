@@ -1,8 +1,12 @@
 module Foundation where
 
-import Control.Monad.Reader
+import           ClassyPrelude
 
 newtype AppT m a =
   AppT { runAppT :: ReaderT String m a
-       }
+       } deriving ( Functor
+                  , Applicative
+                  , Monad
+                  , MonadReader String
+                  )
 
