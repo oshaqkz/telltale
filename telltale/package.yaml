@@ -1,14 +1,4 @@
 name:                telltale
-version:             0.1.0.0
-github:              "githubuser/telltale"
-license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2021 Author name here"
-
-extra-source-files:
-- README.md
-- ChangeLog.md
 
 default-extensions:
 - GeneralizedNewtypeDeriving
@@ -17,7 +7,6 @@ default-extensions:
 
 dependencies:
 - base >= 4.7 && < 5
-- mtl
 - classy-prelude
 
 library:
