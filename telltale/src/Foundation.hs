@@ -12,5 +12,6 @@ newtype AppT m a =
                   , Applicative
                   , Monad
                   , MonadReader Config
+                  , MonadIO
                   )
 
