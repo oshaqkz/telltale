@@ -9,6 +9,7 @@ dependencies:
 - base >= 4.7 && < 5
 - classy-prelude
 - katip
+- monad-logger
 
 library:
   source-dirs: src
