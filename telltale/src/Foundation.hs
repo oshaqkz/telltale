@@ -14,7 +14,6 @@ newtype AppT m a =
                   , Applicative
                   , Monad
                   , MonadReader Config
-                  , MonadIO
                   )
 
 runAppT :: Config -> AppT m a -> m a
