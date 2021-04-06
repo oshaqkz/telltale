@@ -1,9 +1,10 @@
 module Foundation where
 
 import           ClassyPrelude
+import           Katip         (LogEnv)
 
 data Config =
-  Config { _something :: Text
+  Config { _logEnv :: LogEnv
          }
 
 type App a = AppT IO a

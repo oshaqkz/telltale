@@ -8,8 +8,8 @@ default-extensions:
 dependencies:
 - base >= 4.7 && < 5
 - classy-prelude
-- katip
 - monad-logger
+- katip
 
 library:
   source-dirs: src
