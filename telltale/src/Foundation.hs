@@ -1,7 +1,7 @@
 module Foundation where
 
-import           ClassyPrelude
-import           Katip         (LogEnv)
+import           Katip (LogEnv)
+import           RIO
 
 data Config =
   Config { _logEnv :: LogEnv

@@ -7,7 +7,7 @@ default-extensions:
 
 dependencies:
 - base >= 4.7 && < 5
-- classy-prelude
+- rio
 - monad-logger
 - katip
 
