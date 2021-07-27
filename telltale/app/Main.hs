@@ -1,6 +1,7 @@
 module Main where
 
 import           RIO
+import           RIO.ByteString.Lazy (putStrLn)
 
 main :: IO ()
-main = print "Launching missiles..."
+main = putStrLn "Launching missiles..."

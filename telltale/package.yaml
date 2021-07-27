@@ -1,18 +1,34 @@
 name:                telltale
 
-default-extensions:
-- GeneralizedNewtypeDeriving
-- NoImplicitPrelude
-- OverloadedStrings
 
 dependencies:
-- base >= 4.7 && < 5
-- rio
-- monad-logger
-- katip
+  - base >= 4.7 && < 5
+  - rio
+
+default-extensions:
+  - NoImplicitPrelude
+  - OverloadedStrings
 
 library:
   source-dirs: src
+  default-extensions:
+    - GeneralizedNewtypeDeriving
+    - NoImplicitPrelude
+    - OverloadedStrings
+    - TypeOperators
+    - DataKinds
+  dependencies:
+    - base >= 4.7 && < 5
+    - rio
+    - wai
+    - warp
+    - hedis
+    - wai-websockets
+    - websockets
+    - servant
+    - servant-server
+    - monad-logger
+    - katip
 
 executables:
   telltale-exe:
