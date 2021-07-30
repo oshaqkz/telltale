@@ -21,6 +21,7 @@ library:
     - base >= 4.7 && < 5
     - rio
     - wai
+    - http-types
     - warp
     - hedis
     - wai-websockets
@@ -28,6 +29,7 @@ library:
     - servant
     - servant-server
     - monad-logger
+    - mtl
     - katip
 
 executables:

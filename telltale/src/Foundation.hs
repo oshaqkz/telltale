@@ -1,13 +1,16 @@
 module Foundation where
 
-import           Katip (LogEnv)
 import           RIO
 
+import           Control.Monad.Except
+import qualified Servant              as Servant
+
+
 data Config =
-  Config { _logEnv :: LogEnv
+  Config { _temp :: Text
          }
 
-type App a = AppT IO a
+type App = AppT IO
 
 newtype AppT m a =
   AppT { unAppT :: ReaderT Config m a
@@ -19,4 +22,8 @@ newtype AppT m a =
 
 runAppT :: Config -> AppT m a -> m a
 runAppT = flip $ runReaderT . unAppT
+
+appToHandler :: Config -> App a -> Servant.Handler a
+appToHandler config =
+  Servant.Handler . ExceptT . try . ($ config) . flip runAppT
 
