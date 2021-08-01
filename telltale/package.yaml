@@ -16,6 +16,7 @@ library:
     - NoImplicitPrelude
     - OverloadedStrings
     - TypeOperators
+    - FlexibleContexts
     - DataKinds
   dependencies:
     - base >= 4.7 && < 5
