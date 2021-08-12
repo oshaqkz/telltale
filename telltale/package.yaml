@@ -3,11 +3,6 @@ name:                telltale
 
 dependencies:
   - base >= 4.7 && < 5
-  - rio
-
-default-extensions:
-  - NoImplicitPrelude
-  - OverloadedStrings
 
 library:
   source-dirs: src
