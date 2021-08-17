@@ -1,13 +1,17 @@
+{-# LANGUAGE TemplateHaskell #-}
+
 module Foundation where
 
 import           RIO
 
 import           Control.Monad.Except
+import           Data.Aeson.TH
+import           Data.Aeson.Casing
 import qualified Servant              as Servant
 
 
 data Config =
-  Config { _temp :: Text
+  Config { vars :: Variables
          }
 
 type App = AppT IO
@@ -19,6 +23,11 @@ newtype AppT m a =
                   , Monad
                   , MonadReader Config
                   )
+
+data Variables = Variables { appPort :: Int
+                           } deriving Show
+
+$(deriveJSON defaultOptions { fieldLabelModifier = trainCase } ''Variables)
 
 runAppT :: Config -> AppT m a -> m a
 runAppT = flip $ runReaderT . unAppT

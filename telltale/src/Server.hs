@@ -3,6 +3,7 @@ module Server where
 
 import           RIO
 
+import           Data.Yaml
 import           Network.Wai.Handler.Warp (run)
 import           Servant                  (hoistServer, serve)
 
@@ -13,10 +14,12 @@ import           Foundation
 start :: IO ()
 start = do
 
-  let config = Config "test"
+  vars@Variables{..} <- decodeFileThrow "config.yaml"
+
+  let config = Config vars
       app    = serve api $ hoistServer api (appToHandler config) handlers
 
-  run 3000 app
+  run appPort app
 
 
 api :: Proxy Api
