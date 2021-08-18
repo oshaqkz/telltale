@@ -16,7 +16,7 @@ start = do
 
   vars@Variables{..} <- decodeFileThrow "config.yaml"
 
-  let config = Config vars
+  let config = Config{..}
       app    = serve api $ hoistServer api (appToHandler config) handlers
 
   run appPort app
