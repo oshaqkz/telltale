@@ -5,8 +5,8 @@ module Foundation where
 import           RIO
 
 import           Control.Monad.Except
-import           Data.Aeson.TH
 import           Data.Aeson.Casing
+import           Data.Aeson.TH
 import qualified Servant              as Servant
 
 
